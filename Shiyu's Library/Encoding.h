@@ -18,7 +18,7 @@ class Encoding
         static string PhotoToBase64(string PhotoRoad);
         static string base64_encode(char* bytes_to_encode, unsigned int in_len);
         static string base64_decode(string const& encoded_string);
+        static string PhotoToUpset(string PhotoRoad);
     private:
         static unsigned char ToHex(unsigned char x);
-        static inline bool is_base64(unsigned char c);
 };

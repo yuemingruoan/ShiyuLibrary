@@ -44,34 +44,11 @@ string Encoding::TextToBase64(string sourceData)//将信息进行Base64编码
         int m = (chunk & 0x0000003f);
         *out++ = alphabet[j];
         *out++ = alphabet[k];
-        if (padlen > 1) 
-        {
-            if ((OmitTrailingEquals) == 0)
-            {
-                *out++ = padchar;
-            }               
-        }
-        else 
-        {
-            *out++ = alphabet[l];
-        }
-        if (padlen > 0) 
-        {
-            if ((OmitTrailingEquals) == 0)
-            {
-                *out++ = padchar;
-            }
-        }
-        else 
-        {
-            *out++ = alphabet[m];
-        }
+        *out++ = alphabet[l];
+        *out++ = alphabet[m];
     }
     assert((OmitTrailingEquals) || (out == tmp.size() + tmp.data()));
-    if (OmitTrailingEquals)
-    {
-        tmp.resize(out - tmp.data());
-    } 
+    tmp.resize(out - tmp.data());
     return tmp;
 }
 string Encoding::TextToUrl(string& str)//将文本进行URL编码
@@ -200,7 +177,7 @@ string Encoding::PhotoToBase64(string PhotoRoad) //将图片转换为Base64编码
     is.close();
     return img;
 }
-string PhotoToUpset(string PhotoRoad)//将图片转换为网络上传时的格式（Base64编码然后转url）
+string Encoding::PhotoToUpset(string PhotoRoad)//将图片转换为网络上传时的格式（Base64编码然后转url）
 {
     static string a;
     a = Encoding::PhotoToBase64(PhotoRoad);

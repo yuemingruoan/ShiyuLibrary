@@ -1,4 +1,4 @@
-1.每个.cpp文件中必须包含using namespace std(那么多std::看着浑身不舒服)；
+1.每个文件中必须包含using namespace std(那么多std::看着浑身不舒服)；
 2.一个.cpp文件对应一个.h文件（main.cpp除外，那个是测试用的）所有.h文件最后都要include在ShiyuLibrary.h内，最终调用库调用的即是ShiyuLibrary.h；
 3.所有函数必须写上注释（写在函数的定义处，而不是声明处），格式如下：
 ------------------------------

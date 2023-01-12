@@ -1,3 +1,4 @@
+using namespace std;
 enum Base64Option
 {
     Base64Encoding = 0,
@@ -9,3 +10,11 @@ static const std::string base64_chars ="ABCDEFGHIJKLMNOPQRSTUVWXYZ""abcdefghijkl
 static const char alphabet_base64[] = "ABCDEFGH" "IJKLMNOP" "QRSTUVWX" "YZabcdef""ghijklmn" "opqrstuv" "wxyz0123" "456789+/";
 static const char alphabet_base64url[] = "ABCDEFGH" "IJKLMNOP" "QRSTUVWX" "YZabcdef""ghijklmn" "opqrstuv" "wxyz0123" "456789-_";
 static const char padchar = '=';
+class Encoding
+{
+    public:    
+        static string TextToBase64(string sourceData);
+        static string TextToUrl(string& str);
+    private:
+        static unsigned char ToHex(unsigned char x);
+};

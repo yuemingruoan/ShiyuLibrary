@@ -8,6 +8,7 @@
 #include<ios>
 #include"assert.h"
 #include"Encoding.h"
+static inline bool is_base64(unsigned char c);
 using namespace std;
 //以下为面向使用者的函数（public）
  string Encoding::TextToBase64(string sourceData)//将信息进行Base64编码
@@ -186,7 +187,7 @@ string base64_decode(std::string const& encoded_string)
     }
     return ret;
 }
-string PhotoToBase64(string PhotoRoad) //将图片转换为Base64编码
+string Encoding::PhotoToBase64(string PhotoRoad) //将图片转换为Base64编码
 {
     ifstream is(PhotoRoad, ifstream::in | ios::binary);
     is.seekg(0, is.end);
@@ -202,7 +203,7 @@ string PhotoToBase64(string PhotoRoad) //将图片转换为Base64编码
 string PhotoToUpset(string PhotoRoad)//将图片转换为网络上传时的格式（Base64编码然后转url）
 {
     static string a;
-    a = PhotoToBase64(PhotoRoad);
+    a = Encoding::PhotoToBase64(PhotoRoad);
     a = Encoding::TextToUrl(a);
     return a;
 }

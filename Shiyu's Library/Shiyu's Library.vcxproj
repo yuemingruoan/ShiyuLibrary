@@ -128,9 +128,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Encoding.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Encoding.h" />
+    <ClInclude Include="shiyu.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="lib\HowToWrite.txt" />

@@ -11,7 +11,7 @@
 static inline bool is_base64(unsigned char c);
 using namespace std;
 //以下为面向使用者的函数（public）
- string Encoding::TextToBase64(string sourceData)//将信息进行Base64编码
+string Encoding::TextToBase64(string sourceData)//将信息进行Base64编码
 {
     const char* const alphabet = Base64UrlEncoding ? alphabet_base64url : alphabet_base64;
     int padlen = 0;
@@ -97,7 +97,7 @@ string Encoding::TextToUrl(string& str)//将文本进行URL编码
     }
     return strTemp;
 }
-string base64_encode(char* bytes_to_encode, unsigned int in_len)
+string Encoding::base64_encode(char* bytes_to_encode, unsigned int in_len)
 {
     string ret;
     int i = 0;
@@ -141,7 +141,7 @@ string base64_encode(char* bytes_to_encode, unsigned int in_len)
     }
     return ret;
 }
-string base64_decode(std::string const& encoded_string)
+string Encoding::base64_decode(std::string const& encoded_string)
 {
     int in_len = encoded_string.size();
     int i = 0;

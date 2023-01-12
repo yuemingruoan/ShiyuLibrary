@@ -26,7 +26,7 @@
     <ClInclude Include="Encoding.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="shiyu.h">
+    <ClInclude Include="ShiyuLibrary.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

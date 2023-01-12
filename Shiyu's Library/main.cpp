@@ -1,6 +1,6 @@
 #include<iostream>
 #include<string>
-#include"shiyu.h"
+#include"ShiyuLibrary.h"
 using namespace std;
 int main()
 {

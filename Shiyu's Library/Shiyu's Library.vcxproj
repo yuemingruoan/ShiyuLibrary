@@ -132,7 +132,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Encoding.h" />
-    <ClInclude Include="shiyu.h" />
+    <ClInclude Include="ShiyuLibrary.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="lib\HowToWrite.txt" />

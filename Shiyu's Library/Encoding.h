@@ -16,6 +16,9 @@ class Encoding
         static string TextToBase64(string sourceData);
         static string TextToUrl(string& str);
         static string PhotoToBase64(string PhotoRoad);
+        static string base64_encode(char* bytes_to_encode, unsigned int in_len);
+        static string base64_decode(string const& encoded_string);
     private:
         static unsigned char ToHex(unsigned char x);
+        static inline bool is_base64(unsigned char c);
 };

@@ -11,12 +11,7 @@
 using namespace std;
 string TextToBase64(string sourceData, int options)//将信息进行Base64编码
 {
-    const char alphabet_base64[] = "ABCDEFGH" "IJKLMNOP" "QRSTUVWX" "YZabcdef"
-        "ghijklmn" "opqrstuv" "wxyz0123" "456789+/";
-    const char alphabet_base64url[] = "ABCDEFGH" "IJKLMNOP" "QRSTUVWX" "YZabcdef"
-        "ghijklmn" "opqrstuv" "wxyz0123" "456789-_";
     const char* const alphabet = Base64UrlEncoding ? alphabet_base64url : alphabet_base64;
-    const char padchar = '=';
     int padlen = 0;
     string tmp;
     tmp.resize((sourceData.size() + 2) / 3 * 4);

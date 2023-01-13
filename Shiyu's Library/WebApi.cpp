@@ -5,7 +5,7 @@
 #include"ShiyuLibrary.h"
 using namespace std;
 //以下为面向使用者的函数（public）
-string WebApi::OcrPhoto(string typeId,string PhotoRoad)
+string WebApi::JiTu_OcrPhoto(string typeId,string PhotoRoad)
 {
     httplib::Client client("huoying.tpddns.cn", 12900);
     nlohmann::json json;

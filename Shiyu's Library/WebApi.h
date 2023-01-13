@@ -12,7 +12,7 @@ using namespace std;
 class WebApi
 {
 	public:
-		static string OcrPhoto(string typeId, string PhotoRoad);
+		static string JiTu_OcrPhoto(string typeId, string PhotoRoad);
         /*------------------------------
 		*函数用处：对图片进行文字识别;
 		*接口文档：http://huoying.tpddns.cn:12900/home/document;

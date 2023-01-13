@@ -129,12 +129,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="SArray.cpp" />
     <ClCompile Include="SEncoding.cpp" />
     <ClCompile Include="Smain.cpp" />
     <ClCompile Include="SNumber.cpp" />
     <ClCompile Include="SWebApi.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="SArray.h" />
     <ClInclude Include="SEncoding.h" />
     <ClInclude Include="lib\httplib.h" />
     <ClInclude Include="lib\nlohmann json.hpp" />

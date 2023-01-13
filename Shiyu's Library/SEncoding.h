@@ -5,6 +5,7 @@
 *创建时间：2023年1月13日;
 *引用的支持库：无;
 ------------------------------*/
+#include<string>
 using namespace std;
 enum Base64Option
 {

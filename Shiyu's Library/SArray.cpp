@@ -10,7 +10,6 @@
 #include <codecvt> 
 #include <locale> 
 #include"ShiyuLibrary.h"
-#include "SArray.h"
 using namespace std;
 
 SArray::SArray()
@@ -32,6 +31,14 @@ SArray::SArray(const vector<double>& v)
 {
 	_data = v;
 	_sm = SortMethod::BubbleSort;
+}
+
+SArray::SArray(initializer_list<double> l)
+{
+	for (double n : l)
+	{
+		_data.push_back(n);
+	}
 }
 
 SArray::~SArray()

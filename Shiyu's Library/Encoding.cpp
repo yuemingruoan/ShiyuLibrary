@@ -7,6 +7,8 @@
 #include<fstream>
 #include<ios>
 #include"assert.h"
+#include <codecvt> 
+#include <locale> 
 #include"Encoding.h"
 using namespace std;
 //以下为面向使用者的函数（public）
@@ -73,7 +75,7 @@ string Encoding::TextToUrl(string& str)//将文本进行URL编码
     }
     return strTemp;
 }
-string Encoding::base64_encode(char* bytes_to_encode, unsigned int in_len)
+string Encoding::CharBase64Encode(char* bytes_to_encode, unsigned int in_len)
 {
     string ret;
     int i = 0;
@@ -117,7 +119,7 @@ string Encoding::base64_encode(char* bytes_to_encode, unsigned int in_len)
     }
     return ret;
 }
-string Encoding::base64_decode(std::string const& encoded_string)
+string Encoding::CharBase64Decode(string & encoded_string)
 {
     int in_len = encoded_string.size();
     int i = 0;
@@ -171,7 +173,7 @@ string Encoding::PhotoToBase64(string PhotoRoad) //将图片转换为Base64编码
     is.seekg(0, is.beg);
     char* buffer = new char[length];
     is.read(buffer, length);
-    string img = base64_encode(buffer, length);
+    string img = Encoding::CharBase64Encode(buffer, length);
     delete[]buffer;
     is.close();
     return img;
@@ -183,7 +185,7 @@ string Encoding::PhotoToUpset(string PhotoRoad)//将图片转换为网络上传时的格式（B
     a = Encoding::TextToUrl(a);
     return a;
 }
-string GBKToUTF8(string& strGBK)//转码 GBK编码转成UTF8编码
+string Encoding::GBKToUTF8(string& strGBK)//转码 GBK编码转成UTF8编码
 {
     int len = MultiByteToWideChar(CP_ACP, 0, strGBK.c_str(), -1, NULL, 0);
     wchar_t* wszUtf8 = new wchar_t[len];
@@ -198,6 +200,30 @@ string GBKToUTF8(string& strGBK)//转码 GBK编码转成UTF8编码
     return a;
     delete[] szUtf8;
     delete[] wszUtf8;
+}
+string Encoding::UnicodeToUTF8(wstring& wstr)
+{
+    string ret;
+    try {
+        std::wstring_convert< std::codecvt_utf8<wchar_t> > wcv;
+        ret = wcv.to_bytes(wstr);
+    }
+    catch (const std::exception& e) {
+        std::cerr << e.what() << std::endl;
+    }
+    return ret;
+}
+wstring Encoding::UTF8ToUnicode(string& str)
+{
+    std::wstring ret;
+    try {
+        std::wstring_convert< std::codecvt_utf8<wchar_t> > wcv;
+        ret = wcv.from_bytes(str);
+    }
+    catch (const std::exception& e) {
+        std::cerr << e.what() << std::endl;
+    }
+    return ret;
 }
 //以下为不面向使用者，仅为面向使用者的函数服务的函数（private）
 unsigned char Encoding::ToHex(unsigned char x)

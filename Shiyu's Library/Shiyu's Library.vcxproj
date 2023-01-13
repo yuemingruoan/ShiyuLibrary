@@ -136,7 +136,7 @@
   <ItemGroup>
     <ClInclude Include="Encoding.h" />
     <ClInclude Include="lib\httplib.h" />
-    <ClInclude Include="lib\json.hpp" />
+    <ClInclude Include="lib\nlohmann json.hpp" />
     <ClInclude Include="ShiyuLibrary.h" />
     <ClInclude Include="WebApi.h" />
   </ItemGroup>

@@ -38,7 +38,7 @@
     <ClInclude Include="lib\httplib.h">
       <Filter>资源文件</Filter>
     </ClInclude>
-    <ClInclude Include="lib\json.hpp">
+    <ClInclude Include="lib\nlohmann json.hpp">
       <Filter>资源文件</Filter>
     </ClInclude>
     <ClInclude Include="WebApi.h">

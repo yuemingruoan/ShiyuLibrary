@@ -1,10 +1,11 @@
 #include"lib/httplib.h"
-#include"lib/json.hpp"
+#include"lib/nlohmann json.hpp"
 #include<iostream>
 #include<iomanip>
 #include"ShiyuLibrary.h"
 using namespace std;
-string OcrPhoto(string typeId, string promoCode, string PhotoRoad)//对图片中文字进行识别
+//以下为面向使用者的函数（public）
+string WebApi::OcrPhoto(string typeId,string PhotoRoad)
 {
     httplib::Client client("huoying.tpddns.cn", 12900);
     nlohmann::json json;
@@ -12,7 +13,7 @@ string OcrPhoto(string typeId, string promoCode, string PhotoRoad)//对图片中文字
     json["password"] = "123456ab";
     json["typeId"] = typeId;
     json["base64UrlencodedImg"] = Encoding::PhotoToUpset(PhotoRoad);
-    json["promoCode"] = promoCode;
+    json["promoCode"] = "jfuGKkyXzzrX_yGdBAY0V";
     auto res = client.Post("/prod-api/business/ocr/pic", {}, json.dump(), "application/json");
     return res->body;
 }

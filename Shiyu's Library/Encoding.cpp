@@ -183,6 +183,22 @@ string Encoding::PhotoToUpset(string PhotoRoad)//将图片转换为网络上传时的格式（B
     a = Encoding::TextToUrl(a);
     return a;
 }
+string GBKToUTF8(string& strGBK)//转码 GBK编码转成UTF8编码
+{
+    int len = MultiByteToWideChar(CP_ACP, 0, strGBK.c_str(), -1, NULL, 0);
+    wchar_t* wszUtf8 = new wchar_t[len];
+    memset(wszUtf8, 0, len);
+    MultiByteToWideChar(CP_ACP, 0, strGBK.c_str(), -1, wszUtf8, len);
+    len = WideCharToMultiByte(CP_UTF8, 0, wszUtf8, -1, NULL, 0, NULL, NULL);
+    char* szUtf8 = new char[len + 1];
+    memset(szUtf8, 0, len + 1);
+    WideCharToMultiByte(CP_UTF8, 0, wszUtf8, -1, szUtf8, len, NULL, NULL);
+    string a;
+    a = szUtf8;
+    return a;
+    delete[] szUtf8;
+    delete[] wszUtf8;
+}
 //以下为不面向使用者，仅为面向使用者的函数服务的函数（private）
 unsigned char Encoding::ToHex(unsigned char x)
 {

@@ -2,12 +2,7 @@
 #include<string>
 #include"ShiyuLibrary.h"
 using namespace std;
-int main()
+void µ÷ÊÔÊä³ö(string a)
 {
-	string a;
-	a = "ÄãºÃÑ½";
-	a = Encoding::TextToBase64(a);
 	cout << a << endl;
-	cout << "Hello World!" << endl;
-	return 0;
 }

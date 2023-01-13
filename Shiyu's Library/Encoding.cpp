@@ -204,17 +204,18 @@ string Encoding::GBKToUTF8(string& strGBK)//×ªÂë GBK±àÂë×ª³ÉUTF8±àÂë
 string Encoding::UnicodeToUTF8(wstring& wstr)
 {
     string ret;
-    try 
+    try
     {
         std::wstring_convert< std::codecvt_utf8<wchar_t> > wcv;
         ret = wcv.to_bytes(wstr);
     }
-    catch (const std::exception& e) 
+    catch (const std::exception& e)
     {
         std::cerr << e.what() << std::endl;
     }
     return ret;
 }
+
 string Encoding::UnicodeToANSI(const wstring& wstr)
 {
     std::string ret;

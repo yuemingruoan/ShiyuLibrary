@@ -84,4 +84,19 @@ string:字符串
 wstring:编码字符串
 ------------------------------
 21.注释及代码格式不明白者请参考Encoding类
+22.禁止语句套语句，例：
+------------------------------
+写成这种格式：
+string Encoding::ANSIToUTF8(string& str)
+{
+    wstring a;
+    a = Encoding::ANSIToUnicode(str);
+    return Encoding::UnicodeToUTF8(a);
+}
+而不是这种：
+string Encoding::ANSIToUTF8(string& str)
+{
+    return Encoding::UnicodeToUTF8(Encoding::ANSIToUnicode(str));
+}
+------------------------------
 （暂时先这些，后面想到了会补；）

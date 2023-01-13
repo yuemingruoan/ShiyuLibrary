@@ -4,6 +4,7 @@
 #ifndef ShiyuLibrary.h
 #include"Encoding.h"
 #include"WebApi.h"
+#include"Number.h"
 #endif 
 
 

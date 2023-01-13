@@ -131,12 +131,14 @@
   <ItemGroup>
     <ClCompile Include="Encoding.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Number.cpp" />
     <ClCompile Include="WebApi.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Encoding.h" />
     <ClInclude Include="lib\httplib.h" />
     <ClInclude Include="lib\nlohmann json.hpp" />
+    <ClInclude Include="Number.h" />
     <ClInclude Include="ShiyuLibrary.h" />
     <ClInclude Include="WebApi.h" />
   </ItemGroup>

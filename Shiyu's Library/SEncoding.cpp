@@ -9,11 +9,11 @@
 #include"assert.h"
 #include <codecvt> 
 #include <locale> 
-#include"Encoding.h"
+#include"SEncoding.h"
 //#include"ShiyuLibrary.h"
 using namespace std;
 //以下为面向使用者的函数（public）
-string Encoding::TextToBase64(string sourceData)//将信息进行Base64编码
+string SEncoding::TextToBase64(string sourceData)//将信息进行Base64编码
 {
     const char* const alphabet = Base64UrlEncoding ? alphabet_base64url : alphabet_base64;
     int padlen = 0;
@@ -53,7 +53,7 @@ string Encoding::TextToBase64(string sourceData)//将信息进行Base64编码
     tmp.resize(out - tmp.data());
     return tmp;
 }
-string Encoding::TextToUrl(string& str)//将文本进行URL编码
+string SEncoding::TextToUrl(string& str)//将文本进行URL编码
 {
     string strTemp = "";
     size_t length = str.length();
@@ -76,7 +76,7 @@ string Encoding::TextToUrl(string& str)//将文本进行URL编码
     }
     return strTemp;
 }
-string Encoding::CharBase64Encode(char* bytes_to_encode, unsigned int in_len)
+string SEncoding::CharBase64Encode(char* bytes_to_encode, unsigned int in_len)
 {
     string ret;
     int i = 0;
@@ -120,7 +120,7 @@ string Encoding::CharBase64Encode(char* bytes_to_encode, unsigned int in_len)
     }
     return ret;
 }
-string Encoding::CharBase64Decode(string & encoded_string)
+string SEncoding::CharBase64Decode(string & encoded_string)
 {
     int in_len = encoded_string.size();
     int i = 0;
@@ -166,7 +166,7 @@ string Encoding::CharBase64Decode(string & encoded_string)
     }
     return ret;
 }
-string Encoding::PhotoToBase64(string PhotoRoad) //将图片转换为Base64编码
+string SEncoding::PhotoToBase64(string PhotoRoad) //将图片转换为Base64编码
 {
     ifstream is(PhotoRoad, ifstream::in | ios::binary);
     is.seekg(0, is.end);
@@ -174,19 +174,19 @@ string Encoding::PhotoToBase64(string PhotoRoad) //将图片转换为Base64编码
     is.seekg(0, is.beg);
     char* buffer = new char[length];
     is.read(buffer, length);
-    string img = Encoding::CharBase64Encode(buffer, length);
+    string img = SEncoding::CharBase64Encode(buffer, length);
     delete[]buffer;
     is.close();
     return img;
 }
-string Encoding::PhotoToUpset(string PhotoRoad)//将图片转换为网络上传时的格式（Base64编码然后转url）
+string SEncoding::PhotoToUpset(string PhotoRoad)//将图片转换为网络上传时的格式（Base64编码然后转url）
 {
     static string a;
-    a = Encoding::PhotoToBase64(PhotoRoad);
-    a = Encoding::TextToUrl(a);
+    a = SEncoding::PhotoToBase64(PhotoRoad);
+    a = SEncoding::TextToUrl(a);
     return a;
 }
-string Encoding::GBKToUTF8(string& strGBK)//转码 GBK编码转成UTF8编码
+string SEncoding::GBKToUTF8(string& strGBK)//转码 GBK编码转成UTF8编码
 {
     int len = MultiByteToWideChar(CP_ACP, 0, strGBK.c_str(), -1, NULL, 0);
     wchar_t* wszUtf8 = new wchar_t[len];
@@ -202,7 +202,7 @@ string Encoding::GBKToUTF8(string& strGBK)//转码 GBK编码转成UTF8编码
     delete[] szUtf8;
     delete[] wszUtf8;
 }
-string Encoding::UnicodeToUTF8(wstring& wstr)
+string SEncoding::UnicodeToUTF8(wstring& wstr)
 {
     string ret;
     try
@@ -216,7 +216,7 @@ string Encoding::UnicodeToUTF8(wstring& wstr)
     }
     return ret;
 }
-string Encoding::UnicodeToANSI(const wstring& wstr)
+string SEncoding::UnicodeToANSI(const wstring& wstr)
 {
     std::string ret;
     std::mbstate_t state = {};
@@ -233,19 +233,19 @@ string Encoding::UnicodeToANSI(const wstring& wstr)
     }
     return ret;
 }
-string Encoding::UTF8ToANSI(string& str)
+string SEncoding::UTF8ToANSI(string& str)
 {
     wstring a;
-    a = Encoding::UTF8ToUnicode(str);
-    return Encoding::UnicodeToANSI(a);
+    a = SEncoding::UTF8ToUnicode(str);
+    return SEncoding::UnicodeToANSI(a);
 }
-string Encoding::ANSIToUTF8(string& str)
+string SEncoding::ANSIToUTF8(string& str)
 {
     wstring a;
-    a = Encoding::ANSIToUnicode(str);
-    return Encoding::UnicodeToUTF8(a);
+    a = SEncoding::ANSIToUnicode(str);
+    return SEncoding::UnicodeToUTF8(a);
 }
-wstring Encoding::UTF8ToUnicode(string& str)
+wstring SEncoding::UTF8ToUnicode(string& str)
 {
     std::wstring ret;
     try {
@@ -257,7 +257,7 @@ wstring Encoding::UTF8ToUnicode(string& str)
     }
     return ret;
 }
-wstring Encoding::ANSIToUnicode(const string& str)
+wstring SEncoding::ANSIToUnicode(const string& str)
 {
     wstring ret;
     mbstate_t state = {};
@@ -275,11 +275,11 @@ wstring Encoding::ANSIToUnicode(const string& str)
     return ret;
 }
 //以下为不面向使用者，仅为面向使用者的函数服务的函数（private）
-unsigned char Encoding::ToHex(unsigned char x)
+unsigned char SEncoding::ToHex(unsigned char x)
 {
     return  x > 9 ? x + 55 : x + 48;
 }
-inline bool  Encoding::is_base64(unsigned char c)
+inline bool  SEncoding::is_base64(unsigned char c)
 {
     return (isalnum(c) || (c == '+') || (c == '/'));
 }

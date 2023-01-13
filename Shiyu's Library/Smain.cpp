@@ -6,7 +6,3 @@ int main()
 {
 	return 0;
 }
-void µ÷ÊÔÊä³ö(string a)
-{
-	cout << a << endl;
-}

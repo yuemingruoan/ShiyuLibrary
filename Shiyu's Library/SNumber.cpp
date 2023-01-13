@@ -9,6 +9,6 @@
 #include"assert.h"
 #include <codecvt> 
 #include <locale> 
-#include"Number.h"
+#include"SNumber.h"
 #include"ShiyuLibrary.h"
 using namespace std;

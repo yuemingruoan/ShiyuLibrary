@@ -2,9 +2,9 @@
 //如果您需调用此库，请确保您使用的是C++17及以上的C++标准，并在预处理器中写上如下代码：
 //NDEBUG;_CONSOLE;%(PreprocessorDefinitions) ; _SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;_CRT_SECURE_NO_WARNINGS
 #ifndef ShiyuLibrary.h
-#include"Encoding.h"
-#include"WebApi.h"
-#include"Number.h"
+#include"SEncoding.h"
+#include"SWebApi.h"
+#include"SNumber.h"
 #endif 
 
 

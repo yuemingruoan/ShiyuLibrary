@@ -18,21 +18,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Encoding.cpp">
+    <ClCompile Include="SEncoding.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="Smain.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="WebApi.cpp">
+    <ClCompile Include="SWebApi.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Number.cpp">
+    <ClCompile Include="SNumber.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Encoding.h">
+    <ClInclude Include="SEncoding.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="ShiyuLibrary.h">
@@ -44,10 +44,10 @@
     <ClInclude Include="lib\nlohmann json.hpp">
       <Filter>资源文件</Filter>
     </ClInclude>
-    <ClInclude Include="WebApi.h">
+    <ClInclude Include="SWebApi.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Number.h">
+    <ClInclude Include="SNumber.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

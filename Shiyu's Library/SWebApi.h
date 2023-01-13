@@ -9,7 +9,7 @@
 ------------------------------*/
 #include<string>
 using namespace std;
-class WebApi
+class SWebApi
 {
 	public:
 		static string JiTu_OcrPhoto(string typeId, string PhotoRoad);

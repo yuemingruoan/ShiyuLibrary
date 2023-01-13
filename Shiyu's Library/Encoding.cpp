@@ -10,6 +10,7 @@
 #include <codecvt> 
 #include <locale> 
 #include"Encoding.h"
+//#include"ShiyuLibrary.h"
 using namespace std;
 //以下为面向使用者的函数（public）
 string Encoding::TextToBase64(string sourceData)//将信息进行Base64编码
@@ -215,7 +216,6 @@ string Encoding::UnicodeToUTF8(wstring& wstr)
     }
     return ret;
 }
-
 string Encoding::UnicodeToANSI(const wstring& wstr)
 {
     std::string ret;

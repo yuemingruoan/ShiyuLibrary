@@ -8,7 +8,6 @@
 #include<ios>
 #include"assert.h"
 #include"Encoding.h"
-static inline bool is_base64(unsigned char c);
 using namespace std;
 //以下为面向使用者的函数（public）
 string Encoding::TextToBase64(string sourceData)//将信息进行Base64编码
@@ -189,7 +188,7 @@ unsigned char Encoding::ToHex(unsigned char x)
 {
     return  x > 9 ? x + 55 : x + 48;
 }
-static inline bool is_base64(unsigned char c)
+inline bool  Encoding::is_base64(unsigned char c)
 {
     return (isalnum(c) || (c == '+') || (c == '/'));
 }

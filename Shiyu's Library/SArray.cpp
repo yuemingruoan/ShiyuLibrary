@@ -21,7 +21,7 @@ string SArray::ArrayToString(int arr[],int number)
     a += to_string(arr[number - 1]);
     return a;
 }
-void SArray::BubbleSort(int Array[], int number)
+void SArray::UpBubbleSort(int Array[], int number)
 {
 	for (int i = 0; i < number - 1; i++)
 	{
@@ -52,16 +52,19 @@ int SArray::ArrayGetMax(int Array[],int number)
 	}
 	return max;
 }
-void SArray::ArrayUpsetDown(int Array[], int number)
+void SArray::DownBubbleSort(int Array[], int number)
 {
-	int end = number - 1;
-	int begin = 0;
-	for (; end <= begin; end--, begin++)
+	for (int i = 0; i < number - 1; i++)
 	{
-		int a = 0;
-		Array[begin] = a;
-		Array[begin] = Array[end];
-		Array[end] = Array[begin];
-		
+		for (int j = 0; j < number - i - 1; j++)
+		{
+			if (Array[j] > Array[j + 1])
+			{
+				int temp = Array[j];
+				Array[j] = Array[j + 1];
+				Array[j + 1] = temp;
+			}
+		}
 	}
+	reverse(Array, Array + number);
 }

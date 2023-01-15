@@ -14,10 +14,10 @@ using namespace std;
 class SArray
 {
 public:
-	static string ArrayToString(int arr[],int number);
-	static void BubbleSort(int a[], int number);
-	static int ArrayGetMax(int Array[], int number);
-	static void ArrayUpsetDown(int Array[], int number);
+	 static string ArrayToString(int arr[],int number);
+	 static void UpBubbleSort(int a[], int number);
+	 static void DownBubbleSort(int a[], int number);
+	 static int ArrayGetMax(int Array[], int number);
 private:
 };
 

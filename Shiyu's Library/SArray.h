@@ -14,7 +14,6 @@ using namespace std;
 class SArray
 {
 public:
-	static string ArrayPrint(int arr[]);
 	static string ArrayPrint(int arr[],int number);
 private:
 };

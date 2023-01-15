@@ -4,8 +4,9 @@
 using namespace std;
 int main()
 {
-	int a[5] = { 1,2,4,5,3 };
+	int a[5] = {1,2,100,5,3 };
 	SArray::BubbleSort(a, 5);
-	cout << SArray::ArrayToString(a,5) << endl;
+	cout << SArray::ArrayGetMax (a,5) << endl;
 	return 0;
+	system("pause");
 }

@@ -16,6 +16,7 @@ class SArray
 public:
 	static string ArrayToString(int arr[],int number);
 	static void BubbleSort(int a[], int number);
+	static int ArrayGetMax(int Array[], int number);
 private:
 };
 

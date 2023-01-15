@@ -4,8 +4,8 @@
 using namespace std;
 int main()
 {
-	int a[2] = { 1,2 };
-	string b = SArray::ArrayPrint(a,2);
-	cout << b << endl;
+	int a[5] = { 1,2,4,5,3 };
+	SArray::BubbleSort(a, 5);
+	cout << SArray::ArrayToString(a,5) << endl;
 	return 0;
 }

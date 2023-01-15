@@ -11,7 +11,7 @@
 #include <locale> 
 #include"ShiyuLibrary.h"
 using namespace std;
-string SArray::ArrayPrint(int arr[],int number)
+string SArray::ArrayToString(int arr[],int number)
 {
     string a;
     for (int j = 0; j < number-1; j++)
@@ -20,6 +20,20 @@ string SArray::ArrayPrint(int arr[],int number)
     }
     a += to_string(arr[number - 1]);
     return a;
+}
+void SArray::BubbleSort(int a[], int number)
+{
+	for (; number > 0; number--)
+	{
+		for (int b = 0; b <= number - 1; b++)
+		{
+			if (a[b] < a[b + 1])
+			{
+
+			}
+			else swap(a[b], a[b + 1]);
+		}
+	}
 }
 
 

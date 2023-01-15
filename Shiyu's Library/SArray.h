@@ -14,7 +14,8 @@ using namespace std;
 class SArray
 {
 public:
-	static string ArrayPrint(int arr[],int number);
+	static string ArrayToString(int arr[],int number);
+	static void BubbleSort(int a[], int number);
 private:
 };
 
